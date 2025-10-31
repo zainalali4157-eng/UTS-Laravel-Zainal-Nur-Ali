@@ -32,32 +32,34 @@
 
     <!-- Isi utama halaman website -->
     <main class="container-fluid mt-3">
-        <!-- Judul besar di tengah buat form -->
-        <h1 class="fw-bold text-center mb-4">Form Tambah Produk</h1>
+        <!-- Judul besar di kiri buat form -->
+        <h1 class="fw-bold mb-4">Form Tambah Produk</h1>
 
         <!-- Form buat input data produk baru -->
-        <form class="row g-3">
+        <form class="row g-3" method="POST" action="{{ route('produk.store') }}">
+            @csrf
             <!-- Baris pertama isi 3 kolom: kode, nama, dan jenis produk -->
             <div class="row mb-3">
                 <!-- Kolom pertama buat isi kode produk -->
                 <div class="col-md-4">
                     <label for="kodeProduk" class="form-label fw-semibold">Kode Produk</label>
-                    <input type="text" class="form-control" id="kodeProduk" placeholder="Input Kode Produk" required>
+                    <input type="text" class="form-control" id="kodeProduk" name="kode" placeholder="Input Kode Produk"
+                        required>
                 </div>
                 <!-- Kolom kedua buat isi nama produk -->
                 <div class="col-md-4">
                     <label for="namaProduk" class="form-label fw-semibold">Nama Produk</label>
-                    <input type="text" class="form-control" id="namaProduk" placeholder="Input Nama Produk" required>
+                    <input type="text" class="form-control" id="namaProduk" name="nama" placeholder="Input Nama Produk"
+                        required>
                 </div>
                 <!-- Kolom ketiga buat pilih jenis produk dari dropdown -->
                 <div class="col-md-4">
                     <label for="jenisProduk" class="form-label fw-semibold">Jenis Produk</label>
-                    <select class="form-select" id="jenisProduk" required>
+                    <select class="form-select" id="jenisProduk" name="jenis" required>
                         <option selected disabled>Pilih Produk</option>
-                        <option value="Alat Tulis">Alat Tulis</option>
-                        <option value="Elektronik">Elektronik</option>
-                        <option value="Pakaian">Pakaian</option>
-                        <option value="Makanan">Makanan</option>
+                        @foreach($jenisProduk as $item)
+                        <option value="{{ $item }}">{{ $item }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -67,7 +69,8 @@
                 <!-- Kolom buat input harga, lebarnya 8 dari 12 kolom -->
                 <div class="col-md-8">
                     <label for="harga" class="form-label fw-semibold">Harga</label>
-                    <input type="number" class="form-control" id="harga" placeholder="Input Harga" required>
+                    <input type="number" class="form-control" id="harga" name="harga" placeholder="Input Harga"
+                        required>
                 </div>
                 <!-- Kolom buat tombol simpan, lebarnya 4 dari 12 kolom -->
                 <div class="col-md-4 d-flex align-items-end">
