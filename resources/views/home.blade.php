@@ -2,58 +2,58 @@
 <html lang="en">
 
 <head>
-    <!-- Pengaturan dasar dokumen HTML -->
+    <!-- Set karakter yang digunakan supaya bisa baca tulisan biasa dan simbol -->
     <meta charset="UTF-8">
-    <!-- Agar tampilan responsif di berbagai device -->
+    <!-- Biar website nya bisa menyesuaikan layar hp dan komputer -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UTS Laravel</title>
-    <!-- Menyertakan Bootstrap CSS dari CDN untuk styling -->
+    <!-- Pasang Bootstrap buat bikin tampilan jadi lebih bagus dan rapi -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navbar bagian atas dengan background terang dan bayangan kecil -->
+    <!-- Bagian navigasi atas seperti header website -->
     <nav class="navbar navbar-light bg-light shadow-sm">
         <div class="container-fluid">
-            <!-- Nama brand/logo website -->
+            <!-- Nama website yang ditampilkan di kiri atas -->
             <a class="navbar-brand fw-semibold" href="#">UTS Laravel</a>
 
-            <!-- Tombol menu untuk tampilan mobile -->
-            <button class="navbar-toggler" type="button">
+            <!-- Tombol garis tiga (hamburger) buat buka menu di hp -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Area yang bisa dikembangkan untuk menu navigasi -->
+            <!-- Tempat buat nanti nambah menu kalo perlu -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- Nanti bisa ditambah menu di sini -->
+                <!-- Kosong dulu, bisa diisi nanti -->
             </div>
         </div>
     </nav>
 
-    <!-- Konten utama halaman -->
+    <!-- Konten utama yang isinya konten halaman -->
     <main class="container-fluid">
         <div class="ps-2" style="margin-left: 12px;">
-            <!-- Judul halaman dengan margin atas dan tebal -->
-            <h1 class="fw-bold mt-5">Halaman Home</h1>
+            <!-- Judul besar di halaman home -->
+            <h1 class="fw-bold mt-3">Halaman Home</h1>
         </div>
     </main>
 
-    <!-- Sidebar yang muncul dari kanan (offcanvas) -->
+    <!-- Menu samping yang keluar dari kanan (seperti drawer) -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <!-- Header sidebar -->
+        <!-- Bagian kepala menu samping -->
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasRightLabel">UTS Laravel</h5>
-            <!-- Tombol tutup sidebar -->
+            <!-- Tombol X buat nutup menu samping -->
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <!-- Isi konten sidebar -->
+        <!-- Isi dari menu samping -->
         <div class="offcanvas-body">
-            <!-- Daftar menu navigasi -->
+            <!-- Daftar menu pilihan -->
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="#" class="text-decoration-none">Home</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none">Produk</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Home</a></li>
+                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Produk</a></li>
             </ul>
-            <!-- Form pencarian -->
+            <!-- Kotak search buat cari sesuatu -->
             <div class="mt-3">
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -63,7 +63,7 @@
         </div>
     </div>
 
-    <!-- Menyertakan Bootstrap JavaScript untuk fungsi interaktif -->
+    <!-- Pasang JavaScript Bootstrap biar tombol dan menu bisa berfungsi -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
